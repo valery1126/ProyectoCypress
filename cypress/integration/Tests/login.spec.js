@@ -1,9 +1,8 @@
 /// <reference types="Cypress" />
 
 describe('Login Tests', () => {
-    // Hooks
     beforeEach(() => {
-      // Intercept the request to the API
+
       cy.intercept('POST', '/login').as('login');
       cy.visit('/signin');
     });
