@@ -1,0 +1,26 @@
+{
+  "name": "proyectocypress",
+  "version": "1.0.0",
+  "description": "Proyecto Final - Tecnicas Modernas de Automatizacion - Valery Campos",
+  "main": "index.js",
+  "scripts": {
+    "cy:open":"./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valery1126/ProyectoCypress.git"
+  },
+  "keywords": [
+    "ucreativa",
+    "cypress"
+  ],
+  "author": "Valery Campos Vasquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valery1126/ProyectoCypress/issues"
+  },
+  "homepage": "https://github.com/valery1126/ProyectoCypress#readme",
+  "dependencies": {
+    "cypress": "^8.5.0"
+  }
+}
