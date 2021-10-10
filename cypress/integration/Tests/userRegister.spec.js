@@ -1,25 +1,33 @@
 /// <reference types="Cypress" />
 
+import { registerPage } from '../../page-objects/registerPage';
+import { loginPage } from '../../page-objects/loginPage';
+
 describe('Register User Tests', () => {
     beforeEach(() => {
-      cy.visit('/signup');
+      registerPage.visit();
     });
   
     context('Positive Scenarios', () => {
       it('should register user', () => {
-        cy.get('#firstName').type(Cypress.env('user_Name'));
-        cy.get('#lastName').type(Cypress.env('user_LastName'));    
-        cy.get('#username').type(Cypress.env('user_Username'));
-        cy.get('#password').type(Cypress.env('user_Password'));
-        cy.get('#confirmPassword').type(Cypress.env('user_Password'));
-        cy.get('[data-test="signup-submit"]').click();
 
+        registerPage.typeCredentials({
+          firstname: Cypress.env('user_Name'),
+          lastname: Cypress.env('user_LastName'),
+          username: Cypress.env('user_Username'),
+          password: Cypress.env('user_Password'),
+          confirmPassword: Cypress.env('user_Password')
+        });
+        registerPage.clickSignUp();
 
-        cy.get('#username').type(Cypress.env('user_Username'));
-        cy.get('#password').type(Cypress.env('user_Password'));
-        cy.get('[data-test="signin-submit"]').click();
-        cy.contains(Cypress.env('user_Username')).should('be.visible');
+        loginPage.typeCredentials({
+          username: Cypress.env('user_Username'),
+          password: Cypress.env('user_Password'),
+        });
+        loginPage.clickSignIn();
         cy.url().should('include', '/');
+        cy.contains(Cypress.env('user_Username')).should('be.visible');
+
        
       });
 

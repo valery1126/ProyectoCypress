@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 import { loginPage } from '../../page-objects/loginPage';
+import { bankAccountPage } from '../../page-objects/bankAccountPage';
 
 describe('Login Tests', () => {
     beforeEach(() => {
@@ -17,8 +18,19 @@ describe('Login Tests', () => {
           password: Cypress.env('katharinaPassword'),
         });
         loginPage.clickSignIn();
-        cy.url().should('include', '/');
         cy.contains(Cypress.env('katharinaUser')).should('be.visible');
+
+        bankAccountPage.clickBankAccounts();
+        bankAccountPage.clickNewAccount();
+        bankAccountPage.typeCredentials({
+          BankName: Cypress.env('bankName'),
+          RoutingNumber: Cypress.env('routingNumber'),
+          AccountNumber: Cypress.env('accountNumber')
+        });
+
+        bankAccountPage.clickSaveAccount();
+
+        cy.contains(Cypress.env('bankName')).should('be.visible');
 
 
 
