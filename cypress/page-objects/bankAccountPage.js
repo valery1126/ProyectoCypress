@@ -8,7 +8,8 @@ class BankAccountPage {
     getBankName: () => cy.get('#bankaccount-bankName-input'),
     getRoutingNumber: () => cy.get('#bankaccount-routingNumber-input'),
     getAccountNumber: () => cy.get('#bankaccount-accountNumber-input'),
-    getSaveButton: () => cy.get('[data-test="bankaccount-submit"]')
+    getSaveButton: () => cy.get('[data-test="bankaccount-submit"]'),
+    getDeleteButton: () => cy.get('.MuiListItem-gutters:nth-child(1) .MuiButton-label')
   };
 
   visit() {
@@ -32,6 +33,10 @@ class BankAccountPage {
 
   clickSaveAccount() {
     this.elements.getSaveButton().click();
+  }
+
+  clickDeleteAccount() {
+    this.elements.getDeleteButton().click();
   }
 
 }
