@@ -11,7 +11,7 @@ describe('Transaction List Test', () => {
     });
   
     context('Positive Scenarios', () => {
-        it('should create new transaction', () => {
+        it('should like and comment a transaction', () => {
 
             loginPage.typeCredentials({
             username: Cypress.env('katharinaUser'),
@@ -20,8 +20,6 @@ describe('Transaction List Test', () => {
             loginPage.clickSignIn();
             cy.contains(Cypress.env('katharinaUser')).should('be.visible');
 
-            //cy.scrollTo('top');
-
             homePage.clickSelectTransaction();
             homePage.clickLike();
             homePage.typeInfo({
@@ -29,6 +27,8 @@ describe('Transaction List Test', () => {
             });
             
             homePage.clickEnter();
+
+            homePage.elements.getLikeCount().should('have.text','1 ');
 
         });
 

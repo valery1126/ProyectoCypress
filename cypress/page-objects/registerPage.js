@@ -15,7 +15,7 @@ class RegisterPage {
         cy.visit(this.url);
     }
 
-    typeCredentials({ firstname = ' ', lastname = ' ', username = ' ', password = ' ', confirmPassword = ' ' } = {}) {
+    typeInfo({ firstname = ' ', lastname = ' ', username = ' ', password = ' ', confirmPassword = ' ' } = {}) {
         this.elements.getFirstName().clear().type(firstname);
         this.elements.getLastName().clear().type(lastname);
         this.elements.getUsername().clear().type(username);

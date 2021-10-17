@@ -9,14 +9,14 @@ class BankAccountPage {
     getRoutingNumber: () => cy.get('#bankaccount-routingNumber-input'),
     getAccountNumber: () => cy.get('#bankaccount-accountNumber-input'),
     getSaveButton: () => cy.get('[data-test="bankaccount-submit"]'),
-    getDeleteButton: () => cy.get('.MuiListItem-gutters:nth-child(1) .MuiButton-label')
+    getDeleteButton: () => cy.get('[data-test="bankaccount-delete"]').first()
   };
 
   visit() {
     cy.visit(this.url);
   }
 
-  typeCredentials({ BankName = ' ', RoutingNumber = ' ', AccountNumber = ' ' } = {}) {
+  typeInfo({ BankName = ' ', RoutingNumber = ' ', AccountNumber = ' ' } = {}) {
     this.elements.getBankName().clear().type(BankName);
     this.elements.getRoutingNumber().clear().type(RoutingNumber);
     this.elements.getAccountNumber().clear().type(AccountNumber);

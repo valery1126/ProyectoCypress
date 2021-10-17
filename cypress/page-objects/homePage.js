@@ -2,11 +2,13 @@
 
 class HomePage {
     url = '/signin';
-    elements = {
-      getSelectTransactionButton: () => cy.get('[data-test="transaction-item-nvDYVsPSE"]'),
-      getLikeTransactionButton: () => cy.get('[data-test="transaction-like-button-nvDYVsPSE"]'),
-      getComment: () => cy.get('[data-test="transaction-comment-input-nvDYVsPSE"]'),
 
+    elements = {
+      getSelectTransactionButton: () => cy.get('[data-test^="transaction-item"]').first(),
+      getLikeTransactionButton: () => cy.get('[data-test^="transaction-like-button"]'),
+      getComment: () => cy.get('[data-test^="transaction-comment-input"]'),
+      getLikeCount: ()=> cy.get('[data-test^="transaction-like-count"]'),
+      getFirstComment: ()=> cy.get('.MuiTypography-displayBlock')
     };
   
     visit() {
@@ -22,11 +24,15 @@ class HomePage {
     }
 
     clickSelectTransaction() {
-        this.elements.getSelectTransactionButton().click();
+        this.elements.getSelectTransactionButton().click({force:true});
       }
 
       clickEnter() {
         this.elements.getComment().type('{enter}');
+      }
+
+      getLikeCountLabel(){
+        this.elements.getLikeCount();
       }
 
 

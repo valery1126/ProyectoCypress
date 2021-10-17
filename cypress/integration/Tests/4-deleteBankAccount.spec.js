@@ -23,7 +23,7 @@ describe('Login Tests', () => {
         bankAccountPage.clickBankAccounts();      
         bankAccountPage.clickDeleteAccount();
 
-        cy.contains("O'Hara - Labadie Bank (Deleted)").should('be.visible');
+        cy.contains("(Deleted)").should('be.visible');
 
 
 

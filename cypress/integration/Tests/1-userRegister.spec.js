@@ -11,7 +11,7 @@ describe('Register User Tests', () => {
     context('Positive Scenarios', () => {
       it('should register user', () => {
 
-        registerPage.typeCredentials({
+        registerPage.typeInfo({
           firstname: Cypress.env('user_Name'),
           lastname: Cypress.env('user_LastName'),
           username: Cypress.env('user_Username'),

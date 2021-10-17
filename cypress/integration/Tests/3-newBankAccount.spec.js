@@ -22,7 +22,7 @@ describe('Login Tests', () => {
 
         bankAccountPage.clickBankAccounts();
         bankAccountPage.clickNewAccount();
-        bankAccountPage.typeCredentials({
+        bankAccountPage.typeInfo({
           BankName: Cypress.env('bankName'),
           RoutingNumber: Cypress.env('routingNumber'),
           AccountNumber: Cypress.env('accountNumber')

@@ -4,7 +4,7 @@ class TransactionPage {
     url = '/transaction/new';
     elements = {
       getNewTransactionButton: () => cy.get('[data-test="nav-top-new-transaction"]'),
-      getContact: () => cy.get('[data-test="user-list-item-qywYp6hS0U"]'),
+      getContact: () => cy.get('[data-test^="user-list-item"]').first(),
       getAmount: () => cy.get('#amount'),
       getNote: () => cy.get('#transaction-create-description-input'),
       getRequestButton: () => cy.get('[data-test="transaction-create-submit-request"]'),
