@@ -12,5 +12,10 @@
 
 **Ejecución:** npm run cy:open
 
-  
+**Indicaciones para Ejecución de Pruebas**
+<br/>
+1- Ejecutar la aplicación de cypress "Cypress Real World App"
+<br/>
+2- Ejecutar el comando " npm run cy:open " en la terminal
+<br/>
   
