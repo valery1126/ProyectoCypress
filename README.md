@@ -1,15 +1,21 @@
-# ProyectoCypress - Valery Campos
-<br/>
-Prerequisites
-The only requirement for this project is to have Node.js version 14 installed on your machine. Refer to the .node-version file for the exact version.
+# Proyecto Final - Cypress
 
-TypeScript will be added as a local dependency to the project, so no need to install it.
-<br/>
-Installation
-<br/>
-yarn install
-<br/>
-Run the app
-<br/>
-yarn dev
+### **Universidad Creativa**
 
+**Estudiante:** Valery Campos Vásquez
+
+**Curso:** Tecnicas Modernas de Automatización
+
+**Requerimientos mínimos:** El único requisito para este proyecto es tener la versión 14 de Node.js instalada en su máquina. Consulte el archivo .node-version para conocer la versión exacta.
+
+**Instalación:** npm install
+
+**Ejecución:** npm run cy:open
+
+**Indicaciones para Ejecución de Pruebas**
+<br/>
+1- Ejecutar la aplicación de cypress "Cypress Real World App"
+<br/>
+2- Ejecutar el comando " npm run cy:open " en la terminal
+<br/>
+  
