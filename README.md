@@ -29,4 +29,5 @@
 <br/>
 3- Ejecutar el comando " npm run cy:open " en la terminal de "ProyectoCypress"
 <br/>
+4- Ejecutar las pruebas en el orden que tienen (seguir la numeración)
   
